@@ -1,4 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* REM Setup */
+html {
+/* 
+ * Setting font-size to 62.5% makes 1rem = 10px (assuming browser default of 16px)
+ * This makes it easier to calculate rem values (e.g., 1.6rem = 16px)
+ */
+font-size: 62.5%;
+}
+
+body {
+/* Sets the default body font size to 16px equivalent */
+font-size: 1.6rem;
+line-height: 1.5;
+margin: 0;
+padding: 0;
+
+background-color: rgb(39, 34, 40);
+}
+
+/* Optional: Responsive font-size adjustments */
+@media (max-width: 768px) {
+html {
+  font-size: 56.25%; /* Makes 1rem = 9px */
+}
+}
+
+@media (max-width: 480px) {
+html {
+  font-size: 50%; /* Makes 1rem = 8px */
+}
+}
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+    @include mat.toolbar-overrides((
+      container-background-color: indigo,
+      container-text-color: white,
+    ));
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+
+  .mt-2 {
+    margin-top: 2rem;
+  }
+
+  .mt-6 {
+    margin-top: 6rem;
+  }
+
+  .mr-5 {
+    margin-right: 5rem;
+  }
+
+  .ml-05 {
+    margin-left: .5rem;
+  }
+
+  .p-2 {
+    padding: 2rem;
+  }

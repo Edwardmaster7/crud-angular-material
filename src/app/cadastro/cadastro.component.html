@@ -1,0 +1,112 @@
+<div fxLayout="row" fxLayoutAlign="center">
+  <div fxLayout="column" fxFlex="90rem">
+    <form action="" class="mt-6" #clientsForm="ngForm" (ngSubmit)="salvar()">
+      <mat-card class="p-2">
+        <mat-card-header>
+          <mat-card-title> Dados Pessoais </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="mt-2" appearance="outlined">
+          <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="2rem">
+            <div fxLayout="column" fxFlex="80rem">
+              <mat-form-field class="full-width">
+                <mat-label>Nome: *</mat-label>
+                <input
+                  type="text"
+                  [(ngModel)]="client.name"
+                  name="name"
+                  placeholder="José da Silva"
+                  matInput
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="1.6rem">
+            <div fxLayout="column" fxFlex="80rem">
+              <mat-form-field class="full-width">
+                <mat-label>Email: *</mat-label>
+                <input
+                  [(ngModel)]="client.email"
+                  name="email"
+                  type="email"
+                  placeholder="josedasilva@putin.gov"
+                  id=""
+                  matInput
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="1.6rem">
+            <div fxLayout="column" fxFlex="40rem">
+              <mat-form-field class="full-width">
+                <mat-label>CPF: *</mat-label>
+                <input
+                  [(ngModel)]="client.cpf"
+                  name="cpf"
+                  type="text"
+                  mask="000.000.000-00"
+                  placeholder="seu cpf"
+                  id=""
+                  matInput
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="1.6rem">
+            <div fxLayout="column" fxFlex="30rem">
+              <mat-form-field class="full-width">
+                <mat-label>Data de Nascimento:*</mat-label>
+                <input
+                  [(ngModel)]="client.birthDate"
+                  name="birthDate"
+                  type="text"
+                  mask="00/00/0000"
+                  id=""
+                  matInput
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="1.6rem">
+            <div fxLayout="column" fxFlex="10rem">
+              <mat-form-field class="full-width">
+                <mat-label>UF: *</mat-label>
+                <mat-select [(value)]="client.state" (selectionChange)="loadCities($event)">
+                  <mat-option *ngFor="let uf of estados" [value]="uf.sigla">
+                    {{ uf.sigla }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="30rem">
+              <mat-form-field class="full-width">
+                <mat-label>Cidade: *</mat-label>
+                <mat-select [(value)]="client.city" [disabled]="cidades.length === 0">
+                  <mat-option *ngFor="let c of cidades" [value]="c.nome">
+                    {{ c.nome }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions class="">
+          @if(!isUpdating) {
+          <button mat-flat-button type="submit" color="primary">
+            <mat-icon fontIcon="save" />
+            Salvar
+          </button>
+          } @else {
+          <button mat-flat-button type="submit" color="primary">
+            <mat-icon fontIcon="refresh" />
+            Atualizar
+          </button>
+          }
+          <button mat-flat-button type="" class="ml-05" color="accent">
+            <mat-icon fontIcon="backspace" />
+            Limpar
+          </button>
+    </mat-card-actions>
+</mat-card>
+    </form>
+  </div>
+</div>
