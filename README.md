@@ -2,6 +2,31 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
 
+## Sobre o Projeto
+
+Este é um projeto de estudo desenvolvido com o objetivo de aprofundar os conhecimentos no ecossistema Angular e construir uma aplicação web moderna. O foco foi a criação de uma interface interativa para gerenciamento de dados (CRUD - Create, Read, Update, Delete).
+
+### Tecnologias Utilizadas/Aprendidas
+
+Durante este projeto, explorei e utilizei as seguintes tecnologias:
+
+*   **Angular (v19+):** Framework principal para a estrutura da aplicação e componentização.
+*   **Angular CLI:** Ferramenta essencial para o workflow de desenvolvimento (geração de código, build, testes).
+*   **TypeScript:** Linguagem para adicionar tipagem estática e melhorar a manutenibilidade do código JavaScript.
+*   **Angular Material:** Biblioteca de componentes UI para criar uma interface visualmente agradável e consistente com o Material Design.
+*   **RxJS:** Utilizada para lidar com operações assíncronas e fluxos de dados.
+*   **Angular Flex Layout:** Para a construção de layouts responsivos.
+*   **ngx-mask:** Para formatação e validação de campos de entrada (input).
+
+### Funcionalidades Principais
+
+A aplicação implementa as seguintes funcionalidades básicas de um CRUD:
+
+*   **Cadastro:** Permite registrar novos itens (ex: cursos, usuários, etc.).
+*   **Consulta/Listagem:** Exibe os itens cadastrados em uma tabela ou lista.
+*   **(Potenciais futuras ou implementadas) Edição e Exclusão:** Funcionalidades para modificar ou remover itens existentes.
+*   **Interface Responsiva:** Adaptação do layout para diferentes tamanhos de tela utilizando Angular Material e Flex Layout.
+
 ## Development server
 
 To start a local development server, run:
